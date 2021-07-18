@@ -36,11 +36,11 @@ def genre_results(client, callback_query):
                 keybrd_genre_butt.append([(InlineKeyboardButton(tit, callback_data=f"dt_{r[2]}"))])
         # n = 3
         # keybrd_genre_butt = [keybrd_genre_butts[i:i + n] for i in range(0, len(keybrd_genre_butts), n)]
-        callback_query.answer("Fetching Genres...")
+        callback_query.answer("Mengambil Genre...")
         keybrd_genre_butt.append([InlineKeyboardButton("Back", callback_data=f"{int(data_pre[0]) - 1}_{data_pre[1]}"),
                                   (InlineKeyboardButton(f"Page {data_pre[0]}", callback_data="none")),
                                   (InlineKeyboardButton("Next", callback_data=f"{int(data_pre[0]) + 1}_{data_pre[1]}"))])
         reply_markup = InlineKeyboardMarkup(keybrd_genre_butt)
-        query.edit_message_text(f"Anime under genre **{gen_name}**: ", reply_markup=reply_markup, parse_mode="markdown")
+        query.edit_message_text(f"Anime di bawah genre **{gen_name}**: ", reply_markup=reply_markup, parse_mode="markdown")
     except AttributeError:
-        callback_query.answer("End of search Results...", show_alert=True)
+        callback_query.answer("Hasil akhir pencarian...", show_alert=True)
