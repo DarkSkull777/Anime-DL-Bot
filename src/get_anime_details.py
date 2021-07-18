@@ -16,7 +16,7 @@ def anime_details(client, callback_query):
     dt = query.data
     dt1 = dt.split("_")
     data = dt1[1]
-    query.answer("Fetching Anime Details...")
+    query.answer("Mengambil Detail Anime...")
     animelink = 'https://gogoanime.ai/category/{}'.format(data)
     response = requests.get(animelink)
     plainText = response.text
@@ -57,7 +57,7 @@ def anime_details(client, callback_query):
         source_url = lnk.find("li").a
         ep_num = source_url.get("ep_end")
     kkeeyyb = [
-        [InlineKeyboardButton("Download for Free", callback_data=f"dl_{data}")],
+        [InlineKeyboardButton("Unduh Gratis", callback_data=f"dl_{data}")],
     ]
     reply_markup = InlineKeyboardMarkup(kkeeyyb)
     query.edit_message_text(f"""[{tit_url}]({imgg})
