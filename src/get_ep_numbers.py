@@ -18,7 +18,7 @@ def get_ep(client, callback_query):
     global list_more_anime
     query = callback_query
     data = query.data
-    query.answer("Fetching Episodes...")
+    query.answer("Mengambil Episode...")
     data_spl = data.split("_")
     # print(data_spl)
     animelink = f'https://gogoanime.ai/category/{data_spl[1]}'
@@ -48,6 +48,6 @@ def get_ep(client, callback_query):
         keyb_eps.append((InlineKeyboardButton(f'{i}', callback_data=f"eps_{i}_{animeid}")))
     m=5
     keybrd_inline_butt = [keyb_eps[i:i + m] for i in range(0, len(keyb_eps), m)]
-    keybrd_inline_butt.append([InlineKeyboardButton("◀️ Back", callback_data=f"dl_{animeid}")])
+    keybrd_inline_butt.append([InlineKeyboardButton("◀️ Kembali", callback_data=f"dl_{animeid}")])
     reply_markups = InlineKeyboardMarkup(keybrd_inline_butt)
     query.edit_message_reply_markup(reply_markup=reply_markups)
