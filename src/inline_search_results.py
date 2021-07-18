@@ -50,7 +50,7 @@ def anime_inline_details(client,message):
         # ending ep no
         ep_num = int(source_url.get("ep_end"))
         kkeeyyb = [
-            [InlineKeyboardButton("Download Ad-Free", callback_data=f"dl {message.text}")],
+            [InlineKeyboardButton("Unduh Bebas Iklan", callback_data=f"dl {message.text}")],
         ]
         reply_markup = InlineKeyboardMarkup(kkeeyyb)
         message.reply_text(f"""[{tit_url}]({imgg})
