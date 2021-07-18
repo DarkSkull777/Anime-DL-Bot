@@ -15,7 +15,7 @@ def get_epIndex(client, callback_query):
     global list_more_anime
     query = callback_query
     data = query.data
-    query.answer("Fetching Episodes...")
+    query.answer("Mengambil Episode...")
     data_spl = data.split("_")
     # print(data_spl)
     animelink = f'https://gogoanime.ai/category/{data_spl[1]}'
@@ -44,12 +44,12 @@ def get_epIndex(client, callback_query):
                                           callback_data=f"eplink_{data_spl[1]}_{listOrganisedInitial.index(item)}")))
             o = 3
             listIndexFinal = [listIndex[i:i + o] for i in range(0, len(listIndex), o)]
-            listIndexFinal.append([InlineKeyboardButton("◀️ Back", callback_data=f"dt_{data_spl[1]}")])
+            listIndexFinal.append([InlineKeyboardButton("◀️ Kembali", callback_data=f"dt_{data_spl[1]}")])
             repl = InlineKeyboardMarkup(listIndexFinal)
             # print(listIndex)
-            query.edit_message_text(text=f"""You selected **{tit_url}**,
+            query.edit_message_text(text=f"""Anda memilih **{tit_url}**,
     
-Select the Episode you want :-""", reply_markup=repl, parse_mode="markdown")
+Pilih Episode yang Anda inginkan :-""", reply_markup=repl, parse_mode="markdown")
         elif int(ep_num_tot) < 120:
             source_url = lnk.find("li").a
             ep_num_tot = source_url.get("ep_end")
@@ -60,9 +60,9 @@ Select the Episode you want :-""", reply_markup=repl, parse_mode="markdown")
                 keyb_eps.append((InlineKeyboardButton(f'{i}', callback_data=f"eps_{i}_{data_spl[1]}")))
             keybrd_inline_butt = [keyb_eps[i:i + n] for i in range(0, len(keyb_eps), n)]
             reply_markups = InlineKeyboardMarkup(keybrd_inline_butt)
-            query.edit_message_text(text=f"""You selected **{tit_url}**,
+            query.edit_message_text(text=f"""Anda memilih **{tit_url}**,
 
-Select the Episode you want :-""", reply_markup=reply_markups, parse_mode="markdown")
+Pilih Episode yang Anda inginkan :-""", reply_markup=reply_markups, parse_mode="markdown")
     except:
         source_url = lnk.find("li").a
         ep_num_tot = source_url.get("ep_end")
@@ -73,6 +73,6 @@ Select the Episode you want :-""", reply_markup=reply_markups, parse_mode="markd
             keyb_eps.append((InlineKeyboardButton(f'{i}', callback_data=f"eps_{i}_{data_spl[1]}")))
         keybrd_inline_butt = [keyb_eps[i:i + n] for i in range(0, len(keyb_eps), n)]
         reply_markups = InlineKeyboardMarkup(keybrd_inline_butt)
-        query.edit_message_text(text=f"""You selected **{tit_url}**,
+        query.edit_message_text(text=f"""Anda memilih **{tit_url}**,
 
-Select the Episode you want :-""", reply_markup=reply_markups, parse_mode="markdown")
+Pilih Episode yang Anda inginkan :-""", reply_markup=reply_markups, parse_mode="markdown")
