@@ -28,4 +28,4 @@ def genres(client, message):
     keybrd_genre_butt = [gen_keyb[i:i + n] for i in range(0, len(gen_keyb), n)]
     #print(keybrd_genre_butt)
     reply_markup = InlineKeyboardMarkup(keybrd_genre_butt)
-    message.reply_text("Choose One Genre to See anime Related to: ", reply_markup=reply_markup, parse_mode="markdown")
+    message.reply_text("Pilih Satu Genre untuk Melihat anime Terkait dengan: ", reply_markup=reply_markup, parse_mode="markdown")
