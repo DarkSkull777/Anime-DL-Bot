@@ -10,23 +10,23 @@ from pyrogram.types import *
 
 def instructions(client, callback_query):
     query = callback_query
-    query.answer("Please Read Carefully!!!")
+    query.answer("Mohon Baca Dengan Teliti!!!")
     keyb = [
-        [InlineKeyboardButton("Search Anime Inline", switch_inline_query_current_chat="")]
+        [InlineKeyboardButton("Cari Anime Online", switch_inline_query_current_chat="")]
     ]
     reply_markup = InlineKeyboardMarkup(keyb)
-    query.edit_message_caption(caption="""**This Bot can Get your favourite Anime and It provides FREE Download Link with a fastest server(Google drive). ❤️😍**
+    query.edit_message_caption(caption="""**Bot ini bisa Mendapatkan Anime favorit Anda dan Ini menyediakan Tautan Unduhan GRATIS dengan server tercepat (Google drive).**
 
-**Points to Be Noted :-**
+**Hal-hal yang Perlu Diperhatikan :-**
 
-__👉Since gogoanime changes their domain often, The bot will go for frequent maintenance. Don't worry, the bot will still be online during maintenance.__
+__👉Karena gogoanime sering mengubah domainnya, Bot akan sering melakukan pemeliharaan. Jangan khawatir, bot akan tetap online selama maintenance.__
 
-__👉For streaming in mobile, open the links with VLC Media Player. You can also use MX Player.__
+__👉Untuk streaming di ponsel, buka tautan dengan VLC Media Player. Anda juga dapat menggunakan MX Player.__
 
-__👉For streaming in PC, use VLC media player network stream.__
+__👉Untuk streaming di PC, gunakan aliran jaringan pemutar media VLC.__
 
-__👉For downloads, just open the links in a browser.__
+__👉Untuk unduhan, cukup buka tautan di browser.__
 
-**That's it, You are all caught up, just start and enjoy your favourite  anime😁😆**
+**Itu saja, Anda semua terjebak, mulai saja dan nikmati anime favorit Anda :D**
 
-**Type /search to Search for an Anime...**""", parse_mode="markdown", reply_markup=reply_markup)
+**Ketik /search Untuk mencari anime...**""", parse_mode="markdown", reply_markup=reply_markup)
