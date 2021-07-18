@@ -10,15 +10,15 @@ from pyrogram.types import *
 
 def dev_info(client, message):
     keyb = [
-        [InlineKeyboardButton("Rate me on BotsArchive", url="https://t.me/BotsArchive/1858")]
+        [InlineKeyboardButton("Support 🌹", url="https://t.me/botdimasdoang")]
     ]
     reply_markup = InlineKeyboardMarkup(keyb)
-    message.reply_text("""Made with ❤️ in 🇮🇳 by <YOUR_TELEGRAM_USERNAME>.
+    message.reply_text("""dibuat oleh Dimasrmdani.
 
 Language: [Python3](https://www.python.org/)
 
-Bot Framework: [Pyrogram Asyncio](https://github.com/pyrogram/pyrogram)
+Website: [DarkSkull7 Site](https://darkskull7.my.to)
 
-Server: <YOUR_SERVER_NAME>
+Server: Linux
 
-Please share the bot if you like it 👍👍""", reply_markup=reply_markup, parse_mode="markdown")
+Silakan bagikan bot jika Anda menyukainya :)""", reply_markup=reply_markup, parse_mode="markdown")
