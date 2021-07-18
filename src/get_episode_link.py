@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 def get_ep_link(client, callback_query):
     query = callback_query
     data = query.data
-    query.answer(f"Please wait till I fetch Links...")
+    query.answer(f"Harap tunggu sampai saya mengambil Tautan...")
     data_spl_ep = data.split("_")
     ep_num_link_get = int(data_spl_ep[1])
     data_spl_ep.remove(data_spl_ep[0])
@@ -210,16 +210,16 @@ def get_ep_link(client, callback_query):
             key.append((InlineKeyboardButton(f"Ep{ep_number} {quality}", url=f"{download_links}")))
         n = 3
         keys = [key[i:i + n] for i in range(0, len(key), n)]
-        keys.append([(InlineKeyboardButton("⏪ Previous Ep", callback_data=f"eps_{ep_num_link_get - 1}_{str_qry_final}")),
-                    (InlineKeyboardButton("↔️Back to list↔️", callback_data=f"dl_{str_qry_final}"))])
+        keys.append([(InlineKeyboardButton("⏪ Ep sebelumnya ", callback_data=f"eps_{ep_num_link_get - 1}_{str_qry_final}")),
+                    (InlineKeyboardButton("↔️Kembali ke list↔️", callback_data=f"dl_{str_qry_final}"))])
         reply_markup = InlineKeyboardMarkup(keys)
-        query.edit_message_text(text=f"""You are now watching **Episode {ep_num_link_get}** of **{tit_url}** :-
+        query.edit_message_text(text=f"""Anda sekarang sedang menonton **Episode {ep_num_link_get}**dari**{tit_url}** :-
 
-Please share the bot if you like it ☺️.
+Silakan bagikan bot jika Anda menyukainya :)
 
-__Note: Select HDP link for faster streaming.__
+__Note: Pilih tautan HDP untuk streaming lebih cepat__
 
-**This the Last Episode of the Series 🥳🥳🥳**""", reply_markup=reply_markup, parse_mode="markdown")
+**Ini Episode Terakhir dari Seri :o**""", reply_markup=reply_markup, parse_mode="markdown")
     elif ep_num_link_get == 1:
         key = []
         for links in res_list:
@@ -229,14 +229,14 @@ __Note: Select HDP link for faster streaming.__
             key.append((InlineKeyboardButton(f"Ep{ep_number} {quality}", url=f"{download_links}")))
         n = 3
         keys = [key[i:i + n] for i in range(0, len(key), n)]
-        keys.append([(InlineKeyboardButton("↔️Back To list↔️", callback_data=f"dl_{str_qry_final}")),
-             (InlineKeyboardButton("Next Ep ⏩", callback_data=f"eps_{ep_num_link_get + 1}_{str_qry_final}"))])
+        keys.append([(InlineKeyboardButton("↔️Kembali ke list↔️", callback_data=f"dl_{str_qry_final}")),
+             (InlineKeyboardButton("Ep lanjutan ⏩", callback_data=f"eps_{ep_num_link_get + 1}_{str_qry_final}"))])
         reply_markup = InlineKeyboardMarkup(keys)
-        query.edit_message_text(text=f"""You are now watching **Episode {ep_num_link_get}** of **{tit_url}** :-
+        query.edit_message_text(text=f"""Anda sekarang sedang menonton **Episode {ep_num_link_get}** dari **{tit_url}** :-
 
-Please share the bot if you like it ☺️.
+Silakan bagikan bot jika Anda menyukainya :)
 
-__Note: Select HDP link for faster streaming.__""", reply_markup=reply_markup, parse_mode="markdown")
+__Note: Pilih tautan HDP untuk streaming lebih cepat.__""", reply_markup=reply_markup, parse_mode="markdown")
     else:
         key = []
         for links in res_list:
@@ -246,12 +246,12 @@ __Note: Select HDP link for faster streaming.__""", reply_markup=reply_markup, p
             key.append((InlineKeyboardButton(f"Ep{ep_number} {quality}", url=f"{download_links}")))
         n = 3
         keys = [key[i:i + n] for i in range(0, len(key), n)]
-        keys.append([(InlineKeyboardButton("⏪ Previous Ep", callback_data=f"eps_{ep_num_link_get - 1}_{str_qry_final}")),
-             (InlineKeyboardButton("↔️Back To list↔️", callback_data=f"dl_{str_qry_final}")),
-             (InlineKeyboardButton("Next Ep ⏩", callback_data=f"eps_{ep_num_link_get + 1}_{str_qry_final}"))])
+        keys.append([(InlineKeyboardButton("⏪ Ep sebelumnya", callback_data=f"eps_{ep_num_link_get - 1}_{str_qry_final}")),
+             (InlineKeyboardButton("↔️Kembali ke list↔️", callback_data=f"dl_{str_qry_final}")),
+             (InlineKeyboardButton("Ep lanjutan ⏩", callback_data=f"eps_{ep_num_link_get + 1}_{str_qry_final}"))])
         reply_markup = InlineKeyboardMarkup(keys)
-        query.edit_message_text(text=f"""You are now watching **Episode {ep_num_link_get}** of **{tit_url}** :-
+        query.edit_message_text(text=f"""Kamu sekarang menonton **Episode {ep_num_link_get}** of **{tit_url}** :-
 
-Please share the bot if you like it ☺️.
+Silakan bagikan bot jika Anda menyukainya :)
 
-__Note: Select HDP link for faster streaming.__""", reply_markup=reply_markup, parse_mode="markdown")
+__Note: Pilih tautan HDP untuk streaming lebih cepat.__""", reply_markup=reply_markup, parse_mode="markdown")
