@@ -19,9 +19,9 @@ def anime_search(client, message):
     if query == "":
         # If no query string is mentioned
         message.reply_animation("https://media.tenor.com/images/cfe564edcb140705ce45aeeca8183812/tenor.gif",
-                                caption=f"""**Your Query should be in This format:** 
+                                caption=f"""**Kueri Anda harus dalam format ini:** 
 
-`/search <space> Name of the Anime you want to Search.`""", parse_mode="markdown")
+`/search <spasi> Nama Anime yang ingin Anda Cari.`""", parse_mode="markdown")
     else:
         url = f"https://gogoanime.ai//search.html?keyword={query}"
         session = HTMLSession()
@@ -39,7 +39,7 @@ def anime_search(client, message):
             keyb.append([InlineKeyboardButton("{}".format(tit), callback_data="dt_{}".format(r[2]))])
         if keyb == []:
             # If returned list is empty, Send the following message.
-            message.reply_text("No results found, Check your Spelling and Search Again...")
+            message.reply_text("Tidak ada hasil yang ditemukan, Periksa Ejaan Anda dan Cari Lagi...")
         else:
             rep = InlineKeyboardMarkup(keyb)
             message.reply_text(text=f"Your Search results for **{query}**", reply_markup=rep, parse_mode="markdown")
